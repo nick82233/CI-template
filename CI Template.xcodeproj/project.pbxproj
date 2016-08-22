@@ -15,6 +15,8 @@
 		CE2A694D1D6408EC001CEDEF /* CI_TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A694C1D6408EC001CEDEF /* CI_TemplateTests.swift */; };
 		CE2A69581D6408EC001CEDEF /* CI_TemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A69571D6408EC001CEDEF /* CI_TemplateUITests.swift */; };
 		CE2A69661D640DBF001CEDEF /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE2A69651D640DBF001CEDEF /* .travis.yml */; };
+		CE2A696A1D645F08001CEDEF /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2A69691D645F08001CEDEF /* ExternalAccessory.framework */; };
+		CE2A696D1D645F74001CEDEF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2A696C1D645F74001CEDEF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		CE2A69571D6408EC001CEDEF /* CI_TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_TemplateUITests.swift; sourceTree = "<group>"; };
 		CE2A69591D6408EC001CEDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE2A69651D640DBF001CEDEF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		CE2A69691D645F08001CEDEF /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		CE2A696B1D645F08001CEDEF /* CI Template.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CI Template.entitlements"; sourceTree = "<group>"; };
+		CE2A696C1D645F74001CEDEF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2A696D1D645F74001CEDEF /* MapKit.framework in Frameworks */,
+				CE2A696A1D645F08001CEDEF /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,8 @@
 		CE2A692B1D6408EC001CEDEF = {
 			isa = PBXGroup;
 			children = (
+				CE2A696C1D645F74001CEDEF /* MapKit.framework */,
+				CE2A69691D645F08001CEDEF /* ExternalAccessory.framework */,
 				CE2A69651D640DBF001CEDEF /* .travis.yml */,
 				CE2A69361D6408EC001CEDEF /* CI Template */,
 				CE2A694B1D6408EC001CEDEF /* CI TemplateTests */,
@@ -100,6 +109,7 @@
 		CE2A69361D6408EC001CEDEF /* CI Template */ = {
 			isa = PBXGroup;
 			children = (
+				CE2A696B1D645F08001CEDEF /* CI Template.entitlements */,
 				CE2A69371D6408EC001CEDEF /* AppDelegate.swift */,
 				CE2A69391D6408EC001CEDEF /* ViewController.swift */,
 				CE2A693B1D6408EC001CEDEF /* Main.storyboard */,
@@ -197,6 +207,14 @@
 					CE2A69331D6408EC001CEDEF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = Z3X6FHQ4Q5;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 					CE2A69471D6408EC001CEDEF = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -406,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CI Template/CI Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CI Template/Info.plist";
@@ -420,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CI Template/CI Template.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CI Template/Info.plist";
@@ -495,6 +515,7 @@
 				CE2A695E1D6408EC001CEDEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2A695F1D6408EC001CEDEF /* Build configuration list for PBXNativeTarget "CI TemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +524,7 @@
 				CE2A69611D6408EC001CEDEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2A69621D6408EC001CEDEF /* Build configuration list for PBXNativeTarget "CI TemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +533,7 @@
 				CE2A69641D6408EC001CEDEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
